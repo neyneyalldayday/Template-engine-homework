@@ -21,48 +21,25 @@ function createManager() {
                 type: "input",
                 name: "name",
                 message: "enter name please",
-                validate: answer => {
-                    if (answer !== "") {
-                        return true;
-                    }
-                    return "entry must be more than one character."
-                }
+               
             },
             {
                 type: "input",
                 name: "id",
                 message: "enter id please",
-                validate: answer => {
-                    const pass = answer.match(/^[1-9]\d*$/);
-                    if (pass) {
-                        return true;
-                    }
-                    return "no sybols or letters allowed, numerical passwords only"
-                }
+               
             },
             {
                 type: "input",
                 name: "email",
                 message: "enter your email addrress.",
-                validate: answer => {
-                    const pass = answer.match(/\S+@\S+\.\S+/);
-                    if (pass) {
-                        return true;
-                    }
-                    return "email not valid."
-                }
+               
             },
             {
                 type: "input",
                 name: "office",
                 message: "enter your office number please.",
-                validate: answer => {
-                    const pass = answer.match(/^[1-9]\d*$/);
-                    if (pass) {
-                        return true;
-                    }
-                    return "no sybols or letters allowed, numerical passwords only"
-                }
+               
             },
         ]).then(function (answers) {
             const manager = new Manager(answers.name, answers.id, answers.email, answers.office);
